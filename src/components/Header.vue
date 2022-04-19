@@ -1,10 +1,9 @@
 <template>
     <header>
         <h1>{{title}}</h1>
-        <Button />
+        <Button text="Add Task" color="green" v-on:click="addTask()" />
+       
     </header>
-    <body>
-    </body>
     
 </template>
 
@@ -14,11 +13,27 @@ import Button from './Button.vue';
 
 export default{
     name: 'Header',
-    props: ['title'],
-
+    props: {
+        title:String,
+    },
     components:{
         Button
+    },
+
+    methods:{
+        addTask(){
+            const data=document.createElement('h1');
+            console.log(data);
+        },
+        updateTask(){
+            console.log("Task Updated")
+        },
+        deleteTask(){
+            console.log("Task deleted")
+        }
     }
+
+
 
 }
 </script>
